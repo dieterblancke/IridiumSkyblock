@@ -398,9 +398,9 @@ public class Island {
         if (p.getLocation().getWorld().equals(IridiumSkyblock.getIslandManager().getWorld())) {
             IridiumSkyblock.nms.sendWorldBorder(p, borderColor, IridiumSkyblock.getUpgrades().sizeUpgrade.upgrades.get(sizeLevel).size + 1, getCenter());
         } else if (IridiumSkyblock.getConfiguration().netherIslands) {
-            Location loc = getCenter().clone();
-            loc.setWorld(IridiumSkyblock.getIslandManager().getNetherWorld());
-            IridiumSkyblock.nms.sendWorldBorder(p, borderColor, IridiumSkyblock.getUpgrades().sizeUpgrade.upgrades.get(sizeLevel).size + 1, loc);
+//            Location loc = new Location(IridiumSkyblock.getIslandManager().getNetherWorld(), getCenter().getX(), getCenter().getY(), getCenter().getZ());
+//
+//            IridiumSkyblock.nms.sendWorldBorder(p, borderColor, IridiumSkyblock.getUpgrades().sizeUpgrade.upgrades.get(sizeLevel).size + 1, loc);
         }
     }
 

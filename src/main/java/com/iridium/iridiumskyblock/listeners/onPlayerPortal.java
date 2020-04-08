@@ -19,7 +19,6 @@ public class onPlayerPortal implements Listener {
                 Island island = IridiumSkyblock.getIslandManager().getIslandViaLocation(e.getFrom());
                 if (island != null) {
                     if (island.getPermissions((u.islandID == island.getId() || island.isCoop(u.getIsland())) ? (island.isCoop(u.getIsland()) ? Role.Member : u.getRole()) : Role.Visitor).useNetherPortal || u.bypassing) {
-                        e.setCanCreatePortal(true);
                         if (e.getFrom().getWorld().equals(IridiumSkyblock.getIslandManager().getWorld())) {
                             e.setTo(island.getNetherhome());
                         } else {

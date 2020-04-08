@@ -81,18 +81,6 @@
           <artifactId>gson</artifactId>
           <groupId>com.google.code.gson</groupId>
         </exclusion>
-        <exclusion>
-          <artifactId>commons-lang</artifactId>
-          <groupId>commons-lang</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>bungeecord-chat</artifactId>
-          <groupId>net.md-5</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>snakeyaml</artifactId>
-          <groupId>org.yaml</groupId>
-        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -106,16 +94,6 @@
       <artifactId>EssentialsXSpawn</artifactId>
       <version>2.16.1</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>EssentialsX</artifactId>
-          <groupId>net.ess3</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>paperlib</artifactId>
-          <groupId>io.papermc</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.github.OmerBenGera</groupId>

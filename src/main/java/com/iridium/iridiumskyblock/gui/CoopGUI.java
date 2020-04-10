@@ -15,10 +15,11 @@ import org.bukkit.inventory.ItemStack;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CoopGUI extends GUI implements Listener {
 
-    public HashMap<Integer, Integer> islands = new HashMap<>();
+    public Map<Integer, Integer> islands = new HashMap<>();
 
     public CoopGUI(Island island) {
         super(island, IridiumSkyblock.getInventories().coopGUISize, IridiumSkyblock.getInventories().coopGUITitle);

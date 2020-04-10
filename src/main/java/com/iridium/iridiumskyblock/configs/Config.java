@@ -6,6 +6,7 @@ import org.bukkit.entity.EntityType;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Config {
     public String prefix = "&b&lIridiumSkyblock &8»";
@@ -44,7 +45,7 @@ public class Config {
     public XBiome defaultNetherBiome = XBiome.NETHER;
     public MissionRestart missionRestart = MissionRestart.Daily;
     public String worldSpawn = "world";
-    public HashMap<Role, Permissions> defaultPermissions = new HashMap<Role, Permissions>() {{
+    public Map<Role, Permissions> defaultPermissions = new HashMap<Role, Permissions>() {{
         for (Role role : Role.values()) {
             if (role == Role.Visitor) {
                 put(role, new Permissions(false, false, false, false, false, false, false, false, false, true, true, false, false, false, false));
@@ -53,7 +54,7 @@ public class Config {
             }
         }
     }};
-    public HashMap<Integer, Integer> islandTopSlots = new HashMap<Integer, Integer>() {{
+    public Map<Integer, Integer> islandTopSlots = new HashMap<Integer, Integer>() {{
         put(1, 4);
         put(2, 12);
         put(3, 14);
@@ -66,13 +67,13 @@ public class Config {
         put(10, 25);
     }};
 
-    public HashMap<XMaterial, Integer> limitedBlocks = new HashMap<XMaterial, Integer>() {{
+    public Map<XMaterial, Integer> limitedBlocks = new HashMap<XMaterial, Integer>() {{
         put(XMaterial.HOPPER, 50);
         put(XMaterial.SPAWNER, 10);
     }};
 
-    public HashMap<XMaterial, Double> blockvalue = null;
-    public HashMap<String, Double> spawnervalue = null;
+    public Map<XMaterial, Double> blockvalue = null;
+    public Map<String, Double> spawnervalue = null;
     public List<XBiome> biomes = Arrays.asList(XBiome.values());
 
     public List<EntityType> blockedEntities = Arrays.asList(EntityType.PRIMED_TNT, EntityType.MINECART_TNT, EntityType.FIREBALL, EntityType.SMALL_FIREBALL, EntityType.ENDER_PEARL);

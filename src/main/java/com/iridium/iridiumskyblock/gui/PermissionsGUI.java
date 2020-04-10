@@ -9,12 +9,13 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class PermissionsGUI extends GUI implements Listener {
 
     private Role role;
 
-    private HashMap<Role, PermissionsGUI> permissions = new HashMap<>();
+    private final Map<Role, PermissionsGUI> permissions = new HashMap<>();
 
     public PermissionsGUI(Island island) {
         super(island, IridiumSkyblock.getInventories().permissionsGUISize, IridiumSkyblock.getInventories().permissionsGUITitle);

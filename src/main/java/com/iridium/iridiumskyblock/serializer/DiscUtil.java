@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -18,7 +19,7 @@ public class DiscUtil {
     // -------------------------------------------- //
     // BYTE
     // -------------------------------------------- //
-    private static HashMap<String, Lock> locks = new HashMap<>();
+    private static final Map<String, Lock> locks = new HashMap<>();
 
     public static byte[] readBytes(File file) throws IOException {
         int length = (int) file.length();

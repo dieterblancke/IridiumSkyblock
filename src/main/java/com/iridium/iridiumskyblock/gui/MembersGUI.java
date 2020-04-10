@@ -14,10 +14,11 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MembersGUI extends GUI implements Listener {
 
-    public HashMap<Integer, User> users = new HashMap<>();
+    public Map<Integer, User> users = new HashMap<>();
 
     public MembersGUI(Island island) {
         super(island, IridiumSkyblock.getInventories().membersGUISize, IridiumSkyblock.getInventories().membersGUITitle);

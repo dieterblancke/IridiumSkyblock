@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class Schematic {
 
-    public static HashMap<String, Schematic> cache = new HashMap<>();
+    public static Map<String, Schematic> cache = new HashMap<>();
 
     public enum SchematicVersion {
         v1_13, v_1_8

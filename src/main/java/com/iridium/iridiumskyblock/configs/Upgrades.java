@@ -3,6 +3,7 @@ package com.iridium.iridiumskyblock.configs;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Upgrades {
 
@@ -33,9 +34,9 @@ public class Upgrades {
     public static class Upgrade {
         public boolean enabled;
         public int slot;
-        public HashMap<Integer, IslandUpgrade> upgrades;
+        public Map<Integer, IslandUpgrade> upgrades;
 
-        public Upgrade(boolean enabled, int slot, HashMap<Integer, IslandUpgrade> upgrades) {
+        public Upgrade(boolean enabled, int slot, Map<Integer, IslandUpgrade> upgrades) {
             this.enabled = enabled;
             this.slot = slot;
             this.upgrades = upgrades;

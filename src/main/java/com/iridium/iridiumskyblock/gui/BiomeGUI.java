@@ -12,6 +12,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class BiomeGUI extends GUI implements Listener {
 
@@ -19,9 +20,9 @@ public class BiomeGUI extends GUI implements Listener {
 
     public BiomeGUI root;
 
-    public HashMap<Integer, BiomeGUI> pages = new HashMap<>();
+    public Map<Integer, BiomeGUI> pages = new HashMap<>();
 
-    public HashMap<Integer, XBiome> biomes = new HashMap<>();
+    public Map<Integer, XBiome> biomes = new HashMap<>();
 
     public BiomeGUI(Island island) {
         IridiumSkyblock.getInstance().registerListeners(this);

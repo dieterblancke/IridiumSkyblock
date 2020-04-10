@@ -211,6 +211,13 @@
             <systemPath>${project.basedir}/deps/EpicSpawners-6.2.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>com.gc</groupId>
+            <artifactId>AdvancedSpawners</artifactId>
+            <version>12.4.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/deps/AdvancedSpawners.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>com.songoda</groupId>
             <artifactId>UltimateStacker</artifactId>
             <version>1.11.3</version>

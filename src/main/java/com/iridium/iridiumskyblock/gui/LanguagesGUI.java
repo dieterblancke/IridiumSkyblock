@@ -12,6 +12,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class LanguagesGUI extends GUI implements Listener {
 
@@ -19,9 +20,9 @@ public class LanguagesGUI extends GUI implements Listener {
 
     public LanguagesGUI root;
 
-    public HashMap<Integer, LanguagesGUI> pages;
+    public Map<Integer, LanguagesGUI> pages;
 
-    public HashMap<Integer, String> languages;
+    public Map<Integer, String> languages;
 
     public LanguagesGUI() {
         pages = new HashMap<>();

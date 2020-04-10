@@ -31,7 +31,7 @@ public class Utils {
                         return object;
                     }
                 } else if (object instanceof HashSet) {
-                    HashSet<Object> objects = (HashSet<Object>) object;
+                    Set<Object> objects = (HashSet<Object>) object;
                     int i = 0;
                     for (Object o : objects) {
                         if ((i == Integer.parseInt(field))) {
@@ -64,7 +64,7 @@ public class Utils {
                         return f;
                     }
                 } else if (object instanceof HashSet) {
-                    HashSet<Object> objects = (HashSet<Object>) object;
+                    Set<Object> objects = (HashSet<Object>) object;
                     int i = 0;
                     for (Object o : objects) {
                         if ((i == Integer.parseInt(field))) {

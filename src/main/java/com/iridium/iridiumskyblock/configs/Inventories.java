@@ -83,7 +83,7 @@ public class Inventories {
     public Item blue = new Item(XMaterial.BLUE_STAINED_GLASS_PANE, 1, "&b&lBlue", new ArrayList<>());
     public Item off = new Item(XMaterial.WHITE_STAINED_GLASS_PANE, 1, "&f&lOff", new ArrayList<>());
 
-    public HashMap<Item, String> menu = new HashMap<Item, String>() {{
+    public Map<Item, String> menu = new HashMap<Item, String>() {{
         put(new Item(XMaterial.WHITE_BED, 13, 1, "&b&lIsland Home", Collections.singletonList("&7Teleport to your island home")), "is home");
         put(new Item(XMaterial.PLAYER_HEAD, 14, 1, "&b&lIsland Members", "Peaches_MLG", Collections.singletonList("&7View your island Members.")), "is members");
         put(new Item(XMaterial.GRASS_BLOCK, 36, 1, "&b&lIsland Regen", Collections.singletonList("&7Regenerate your island.")), "is regen");

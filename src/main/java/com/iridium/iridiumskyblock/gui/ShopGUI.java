@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ShopGUI extends GUI implements Listener {
 
@@ -23,9 +24,9 @@ public class ShopGUI extends GUI implements Listener {
 
     public int page;
 
-    public HashMap<Integer, ShopGUI> shops = new HashMap<>();
+    public Map<Integer, ShopGUI> shops = new HashMap<>();
 
-    public HashMap<Integer, Shop.ShopItem> items = new HashMap<>();
+    public Map<Integer, Shop.ShopItem> items = new HashMap<>();
 
     public ShopGUI() {
         super(IridiumSkyblock.getInventories().shopGUISize, IridiumSkyblock.getInventories().shopGUITitle);

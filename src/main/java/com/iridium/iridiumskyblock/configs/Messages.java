@@ -3,6 +3,7 @@ package com.iridium.iridiumskyblock.configs;
 import com.iridium.iridiumskyblock.Role;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Messages {
 
@@ -106,11 +107,11 @@ public class Messages {
     public String alreadyRecalculating = "%prefix% &7Already recalculating %player%'s Island";
     public String blockLimitReached = "%prefix% &7The island limit for this block has already been reached";
 
-    public HashMap<Role, String> roles = new HashMap<Role, String>() {{
+    public Map<Role, String> roles = new HashMap<Role, String>() {{
         for (Role role : Role.values()) {
             put(role, role.name());
         }
     }};
 
-    public HashMap<String, String> permissions = new HashMap<>();
+    public Map<String, String> permissions = new HashMap<>();
 }

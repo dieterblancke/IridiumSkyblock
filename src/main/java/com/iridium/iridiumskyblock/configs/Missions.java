@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Missions {
 
@@ -71,10 +72,10 @@ public class Missions {
 
     public static class Mission {
         public String name;
-        public HashMap<Integer, MissionData> levels;
+        public Map<Integer, MissionData> levels;
         public Inventories.Item item;
 
-        public Mission(String name, HashMap<Integer, MissionData> levels, Inventories.Item item) {
+        public Mission(String name, Map<Integer, MissionData> levels, Inventories.Item item) {
             this.name = name;
             this.levels = levels;
             this.item = item;

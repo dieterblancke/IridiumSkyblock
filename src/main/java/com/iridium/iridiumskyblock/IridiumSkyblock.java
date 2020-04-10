@@ -41,23 +41,23 @@ public class IridiumSkyblock extends JavaPlugin {
     public static TopGUI topGUI;
     public static ShopGUI shopGUI;
     public static Border border;
-    public static HashMap<Integer, VisitGUI> visitGUI;
-    public static HashMap<Integer, List<String>> oreUpgradeCache = new HashMap<>();
-    public static HashMap<Integer, List<String>> netherOreUpgradeCache = new HashMap<>();
+    public static Map<Integer, VisitGUI> visitGUI;
+    public static Map<Integer, List<String>> oreUpgradeCache = new HashMap<>();
+    public static Map<Integer, List<String>> netherOreUpgradeCache = new HashMap<>();
     public static SkyblockGenerator generator;
     public static WorldEdit worldEdit;
     private static IridiumSkyblock instance;
     private static Persist persist;
     private static IslandManager islandManager;
     private static CommandManager commandManager;
-    public HashMap<Schematics.FakeSchematic, Schematic> schems = new HashMap<>();
-    public HashMap<Schematics.FakeSchematic, Schematic> netherschems = new HashMap<>();
+    public Map<Schematics.FakeSchematic, Schematic> schems = new HashMap<>();
+    public Map<Schematics.FakeSchematic, Schematic> netherschems = new HashMap<>();
     public boolean updatingBlocks = false;
-    public HashMap<String, String> languages = new HashMap<>();
+    public Map<String, String> languages = new HashMap<>();
     public LanguagesGUI languagesGUI;
     private String latest;
 
-    public HashMap<UUID, Island> entities = new HashMap<>();
+    public Map<UUID, Island> entities = new HashMap<>();
 
     public static IridiumSkyblock getInstance() {
         return instance;
@@ -172,8 +172,9 @@ public class IridiumSkyblock extends JavaPlugin {
             if (Bukkit.getPluginManager().isPluginEnabled("MergedSpawner")) new MergedSpawners();
             if (Bukkit.getPluginManager().isPluginEnabled("UltimateStacker")) new UltimateStacker();
             if (Bukkit.getPluginManager().isPluginEnabled("EpicSpawners")) new EpicSpawners();
+            if (Bukkit.getPluginManager().isPluginEnabled("AdvancedSpawners")) new AdvancedSpawners();
             if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null)
-                registerListeners(new onExpansionUnregister());
+                registerListeners(new ExpansionUnregisterListener());
             startCounting();
             getLanguages();
             Bukkit.getScheduler().runTask(this, () -> { // Call this a tick later to ensure all worlds are loaded
@@ -189,7 +190,7 @@ public class IridiumSkyblock extends JavaPlugin {
                 shopGUI = new ShopGUI();
                 visitGUI = new HashMap<>();
 
-                registerListeners(new onEntitySpawn(), new onLeafDecay(), new onBlockPiston(), new onEntityPickupItem(), new onPlayerTalk(), new onItemCraft(), new onPlayerTeleport(), new onPlayerPortal(), new onBlockBreak(), new onBlockPlace(), new onPlayerInteract(), new onBlockFromTo(), new onSpawnerSpawn(), new onEntityDeath(), new onPlayerJoinLeave(), new onBlockGrow(), new onPlayerTalk(), new onPlayerMove(), new onEntityDamageByEntity(), new onPlayerExpChange(), new onPlayerFish(), new onEntityExplode());
+                registerListeners(new EntitySpawnListener(), new LeafDecayListener(), new BlockPistonListener(), new EntityPickupItemListener(), new PlayerTalkListener(), new ItemCraftListener(), new PlayerTeleportListener(), new PlayerPortalListener(), new BlockBreakListener(), new BlockPlaceListener(), new PlayerInteractListener(), new BlockFromToListener(), new SpawnerSpawnListener(), new EntityDeathListener(), new PlayerJoinLeaveListener(), new BlockGrowListener(), new PlayerTalkListener(), new PlayerMoveListener(), new EntityDamageByEntityListener(), new PlayerExpChangeListener(), new PlayerFishListener(), new EntityExplodeListener());
 
                 Bukkit.getScheduler().scheduleAsyncRepeatingTask(IridiumSkyblock.getInstance(), this::saveIslandManager, 0, 20 * 60);
 
@@ -659,11 +660,11 @@ public class IridiumSkyblock extends JavaPlugin {
             getBoosters().flightBooster.crystalsCost = 15;
 
         if (getConfiguration().blockvalue != null) {
-            getBlockValues().blockvalue = (HashMap<XMaterial, Double>) getConfiguration().blockvalue.clone();
+            getBlockValues().blockvalue = new HashMap<>(getConfiguration().blockvalue);
             getConfiguration().blockvalue = null;
         }
         if (getConfiguration().spawnervalue != null) {
-            getBlockValues().spawnervalue = (HashMap<String, Double>) getConfiguration().spawnervalue.clone();
+            getBlockValues().spawnervalue = new HashMap<>(getConfiguration().spawnervalue);
             getConfiguration().spawnervalue = null;
         }
         int max = 0;

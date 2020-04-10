@@ -13,10 +13,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TopGUI extends GUI implements Listener {
 
-    public HashMap<Integer, Integer> islands = new HashMap<>();
+    public Map<Integer, Integer> islands = new HashMap<>();
 
     public TopGUI() {
         super(IridiumSkyblock.getInventories().topGUISize, IridiumSkyblock.getInventories().topGUITitle);

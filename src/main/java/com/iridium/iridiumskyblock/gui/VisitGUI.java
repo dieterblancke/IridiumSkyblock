@@ -16,10 +16,11 @@ import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class VisitGUI extends GUI implements Listener {
 
-    public HashMap<Integer, Integer> islands = new HashMap<>();
+    public Map<Integer, Integer> islands = new HashMap<>();
 
     private int page;
 

@@ -4,6 +4,7 @@ import org.bukkit.OfflinePlayer;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Set;
 
 public class User {
 
@@ -11,7 +12,7 @@ public class User {
     public String name;
     public int islandID;
     public Role role;
-    public HashSet<Integer> invites;
+    public Set<Integer> invites;
     public Island.Warp warp;
     public boolean bypassing;
     public boolean islandChat;

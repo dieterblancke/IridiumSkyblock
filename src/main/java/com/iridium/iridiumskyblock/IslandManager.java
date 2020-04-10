@@ -1,5 +1,6 @@
 package com.iridium.iridiumskyblock;
 
+import com.iridium.iridiumskyblock.configs.Config;
 import com.iridium.iridiumskyblock.configs.Schematics;
 import org.bukkit.*;
 import org.bukkit.World.Environment;
@@ -10,10 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 public class IslandManager {
 
-    public HashMap<Integer, Island> islands = new HashMap<>();
-    public HashMap<String, User> users = new HashMap<>();
+    public Map<Integer, Island> islands = new HashMap<>();
+    public Map<String, User> users = new HashMap<>();
 
-    public transient HashMap<Integer, List<Integer>> islandCache;
+    public transient Map<Integer, List<Integer>> islandCache;
 
     int length = 1;
     int current = 0;
@@ -154,5 +155,12 @@ public class IslandManager {
 
     public Island getIslandViaId(int i) {
         return islands.get(i);
+    }
+
+    public boolean isIslandWorld(World world) {
+        if (world == null) return false;
+        final String name = world.getName();
+        final Config config = IridiumSkyblock.getConfiguration();
+        return (name.equals(config.worldName) || name.equals(config.worldName + "_nether"));
     }
 }

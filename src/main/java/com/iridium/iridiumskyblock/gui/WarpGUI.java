@@ -12,9 +12,10 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class WarpGUI extends GUI implements Listener {
-    public HashMap<Integer, Island.Warp> warps = new HashMap<>();
+    public Map<Integer, Island.Warp> warps = new HashMap<>();
 
     public WarpGUI(Island island) {
         super(island, IridiumSkyblock.getInventories().warpGUISize, IridiumSkyblock.getInventories().warpGUITitle);

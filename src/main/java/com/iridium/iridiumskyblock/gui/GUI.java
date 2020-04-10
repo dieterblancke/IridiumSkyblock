@@ -22,16 +22,19 @@ public abstract class GUI {
     public GUI(Island island, int size, String name) {
         islandID = island.getId();
         this.inventory = Bukkit.createInventory(null, size, Utils.color(name));
-        scheduler = Bukkit.getScheduler().scheduleAsyncRepeatingTask(IridiumSkyblock.getInstance(), this::addContent, 0, 2);
+        scheduler = Bukkit.getScheduler().scheduleAsyncRepeatingTask(IridiumSkyblock.getInstance(), this::addContent, 0, 10);
     }
 
     public GUI(int size, String name) {
         this.inventory = Bukkit.createInventory(null, size, Utils.color(name));
-        scheduler = Bukkit.getScheduler().scheduleAsyncRepeatingTask(IridiumSkyblock.getInstance(), this::addContent, 0, 2);
+        scheduler = Bukkit.getScheduler().scheduleAsyncRepeatingTask(IridiumSkyblock.getInstance(), this::addContent, 0, 10);
     }
 
     public void addContent() {
-        if (inventory.getViewers().isEmpty()) return;
+        if (inventory.getViewers().isEmpty()) {
+            Bukkit.getScheduler().cancelTask(scheduler);
+            return;
+        }
         for (int i = 0; i < inventory.getSize(); i++) {
             if (inventory.getItem(i) == null || inventory.getItem(i).getType().equals(Material.AIR)) {
                 setItem(i, Utils.makeItemHidden(IridiumSkyblock.getInventories().background));

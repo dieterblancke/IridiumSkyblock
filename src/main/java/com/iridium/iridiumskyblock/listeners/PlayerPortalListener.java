@@ -4,15 +4,12 @@ import com.iridium.iridiumskyblock.IridiumSkyblock;
 import com.iridium.iridiumskyblock.Island;
 import com.iridium.iridiumskyblock.IslandManager;
 import com.iridium.iridiumskyblock.User;
-import com.iridium.iridiumskyblock.XMaterial;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
-
-import java.lang.reflect.InvocationTargetException;
 
 public class PlayerPortalListener implements Listener {
 
@@ -36,21 +33,10 @@ public class PlayerPortalListener implements Listener {
                 return;
             }
 
-            if (XMaterial.ISFLAT)
-                event.setCanCreatePortal(true);
-            else {
-                try {
-                    PlayerPortalEvent.class.getMethod("useTravelAgent", boolean.class).invoke(event, true);
-                    Class.forName("org.bukkit.TravelAgent")
-                            .getMethod("setCanCreatePortal", boolean.class)
-                            .invoke(PlayerPortalEvent.class.getMethod("getPortalTravelAgent").invoke(event), true);
-                } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            }
-
             final World world = event.getFrom().getWorld();
-            if (world == null) return;
+            if (world == null) {
+                return;
+            }
 
             final IslandManager islandManager = IridiumSkyblock.getIslandManager();
             if (world.getName().equals(islandManager.getWorld().getName()))
